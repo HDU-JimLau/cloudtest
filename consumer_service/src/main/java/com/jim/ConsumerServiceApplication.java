@@ -16,8 +16,7 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerServiceApplication {
 
 	public static void main(String[] args) {
-		//test
-		//test2
+
 		SpringApplication.run(ConsumerServiceApplication.class, args);
 	}
 
