@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+#应用名称
+spring:
+  application:
+    name: consumer-service
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5 #注册服务拉取时间
+    service-url: #EurekaServer地址
+      defaultZone: http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka
+  instance:
+    prefer-ip-address: true #当其他服务获取地址时提供IP而不是hostname
+    ip-address: 127.0.0.1 #指定自己的IP地址，不指定的话会自己寻找
+    lease-expiration-duration-in-seconds: 10 # 10秒即过期
+    lease-renewal-interval-in-seconds: 5 # 5秒一次心跳
+user-service:
+  ribbon:
+    ConnectTimeout: 250 # 连接超时时间(ms)
+    ReadTimeout: 1000 # 通信超时时间(ms)
+    OkToRetryOnAllOperations: true # 是否对所有操作重试
+    MaxAutoRetriesNextServer: 2 # 同一服务不同实例的重试次数
+    MaxAutoRetries: 1 # 同一实例的重试次数
+feign:
+  hystrix:
+    enabled: true # 开启Feign的熔断功能
