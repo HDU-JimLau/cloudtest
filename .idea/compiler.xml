@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="consumer_service" />
         <module name="eureka_service" />
-        <module name="leyou" />
         <module name="userservice" />
         <module name="zuulservice" />
       </profile>
